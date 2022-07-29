@@ -15,9 +15,21 @@
  */
 
 variable "random_project_id" {
-  description = "Adds a suffix of 4 random characters to the `project_id`"
+  description = "Adds a suffix of 4 random characters to the `project_id`."
   type        = bool
   default     = false
+}
+
+variable "random_project_id_string_method" {
+  description = "Uses a `random_string` for a larger collusion domain than the default `random_project_id` method.  When using this module as part of CI, it is recommended to enable this option."
+  type        = bool
+  default     = false
+}
+
+variable "random_project_id_length" {
+  description = "Length of the `random_project_id_string_method` suffix as integer.  Defaults to 4."
+  type        = number
+  default     = 4
 }
 
 variable "org_id" {

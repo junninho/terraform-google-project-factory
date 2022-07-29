@@ -149,7 +149,9 @@ determining that location is as follows:
 | org\_id | The organization ID. | `string` | n/a | yes |
 | project\_id | The ID to give the project. If not provided, the `name` will be used. | `string` | `""` | no |
 | project\_sa\_name | Default service account name for the project. | `string` | `"project-service-account"` | no |
-| random\_project\_id | Adds a suffix of 4 random characters to the `project_id` | `bool` | `false` | no |
+| random\_project\_id | Adds a suffix of 4 random characters to the `project_id`. | `bool` | `false` | no |
+| random\_project\_id\_length | Length of the `random_project_id_string_method` suffix as integer.  Defaults to 4. | `number` | `4` | no |
+| random\_project\_id\_string\_method | Uses a `random_string` for a larger collusion domain than the default `random_project_id` method.  When using this module as part of CI, it is recommended to enable this option. | `bool` | `false` | no |
 | sa\_role | A role to give the default Service Account for the project (defaults to none) | `string` | `""` | no |
 | shared\_vpc\_subnets | List of subnets fully qualified subnet IDs (ie. projects/$project\_id/regions/$region/subnetworks/$subnet\_id) | `list(string)` | `[]` | no |
 | svpc\_host\_project\_id | The ID of the host project which hosts the shared VPC | `string` | `""` | no |
